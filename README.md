@@ -7,3 +7,6 @@ Steps to run project:
 3) npm install
 4) ung serve
 5) visit http://localhost:4200
+
+Live Demo:
+https://ng2-userspecific-todo.herokuapp.com
