@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
     ) { }
 
     ngOnInit() { 
-        debugger;
         if (localStorage.getItem('currentUser')) {
             this.router.navigate(['/todo']);
         }

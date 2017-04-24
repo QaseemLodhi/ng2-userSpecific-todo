@@ -32,7 +32,6 @@ var LoginComponent = (function () {
         this.loading = false;
     }
     LoginComponent.prototype.ngOnInit = function () {
-        debugger;
         if (localStorage.getItem('currentUser')) {
             this.router.navigate(['/todo']);
         }
