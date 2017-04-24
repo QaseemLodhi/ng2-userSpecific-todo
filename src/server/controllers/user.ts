@@ -3,15 +3,12 @@ import * as crypto from 'crypto';
 import config from '../config';
 import { createToken } from '../service/verify';
 
-// Get all
 export function index(req, res) {
     res.send('User api is working now');
 }
-// Get single
 export function show(req, res) {
 
 }
-// Post/Create
 export function create(req, res) {
     User.findOne({ email: req.body.email })
         .exec((err, userObj) => {
