@@ -42,12 +42,9 @@ export function create(req, res) {
 }
 // login
 export function login(req, res) {
-    console.log(req.body);
     User.findOne({ email: req.body.email })
         .exec((err, userObj) => {
-            console.log("userObj1", userObj);
             if (err) {
-                console.error('err', err);
                 return res.json({ success: false, data: null, error: err });
             }
             else if (!userObj) {
@@ -55,7 +52,6 @@ export function login(req, res) {
             }
             let hash = crypto.createHmac('sha1', config.salt).update(req.body.password).digest('hex');
             if (hash == userObj['password']) {
-                console.log("userObj", userObj);
                 let currentUser = {
                     id: userObj._id,
                     firstName: userObj['firstName'],

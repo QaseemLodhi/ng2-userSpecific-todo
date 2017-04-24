@@ -28,9 +28,7 @@ export class TodoComponent implements OnInit {
   private loadTodos() {
     this.hs.GetRequest('/api/todo/' + this.currentUser.id).subscribe(res => {
       if (!res.success) {
-        console.log(res.error);
       } else {
-        console.log('data', res);
         this.todoList = res.data;
       }
     })
@@ -39,7 +37,6 @@ export class TodoComponent implements OnInit {
     this.loading = true;
     event.preventDefault();
     if (!valid || (value.todoTask === undefined)) return;
-    console.log()
     let obj = {
       todoTask: value.todoTask,
       user_id: this.currentUser.id,
@@ -82,7 +79,6 @@ export class TodoComponent implements OnInit {
 
   }
   logout() {
-    debugger;
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
   }

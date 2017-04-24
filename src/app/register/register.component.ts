@@ -25,11 +25,9 @@ export class RegisterComponent implements OnInit {
     this.loading = true;
     this.hs.PostRequest('/api/register', this.model).subscribe(res => {
       if (!res.success) {
-        console.log(res.error);
         this.loading = false;
          this.alertService.error(res.error);
       } else {
-        console.log('data', res);
         this.alertService.success('Registration successful', true);
         this.loading = false;
         this.router.navigate(['/login']);

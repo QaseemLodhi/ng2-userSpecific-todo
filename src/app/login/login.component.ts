@@ -33,11 +33,9 @@ export class LoginComponent implements OnInit {
         this.loading = true;
         this.hs.PostRequest('/api/login', this.model).subscribe(res => {
             if (!res.success) {
-                console.log(res.error);
                 this.loading = false;
                 this.alertService.error(res.error);
             } else {
-                console.log('data', res);
                 this.alertService.success('Login successful', true);
                 localStorage.setItem('currentUser', JSON.stringify(res.data));
                 this.loading = false;
