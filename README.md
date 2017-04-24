@@ -6,6 +6,7 @@ Steps to run project:
 2) cd ng2-userSpecific-todo
 3) npm install
 4) ung serve
+"start": "node dist/server/server.bundle.js" (for heroku) "start": "ung serve" (for local).
 5) visit http://localhost:4200
 
 Live Demo:
