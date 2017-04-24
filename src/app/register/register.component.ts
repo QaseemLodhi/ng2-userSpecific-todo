@@ -20,6 +20,9 @@ export class RegisterComponent implements OnInit {
   ) { }
   
   ngOnInit() {
+     if (localStorage.getItem('currentUser')) {
+            this.router.navigate(['/todo']);
+        }
   }
   register() {
     this.loading = true;
